@@ -1,4 +1,7 @@
-﻿namespace MarcusMedina.Fluent.Text.Tests.Extensions;
+﻿// MIT License - Copyright (c) 2025 Marcus Ackre Medina
+// See LICENSE file in the project root for full license information.
+
+namespace MarcusMedina.Fluent.Text.Tests.Extensions;
 
 using FluentAssertions;
 using MarcusMedina.Fluent.Text.Builders;

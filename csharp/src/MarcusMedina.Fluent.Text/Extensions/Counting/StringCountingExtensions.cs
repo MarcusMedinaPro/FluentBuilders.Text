@@ -1,4 +1,7 @@
-﻿namespace MarcusMedina.Fluent.Text.Extensions.Counting;
+// MIT License - Copyright (c) 2025 Marcus Ackre Medina
+// See LICENSE file in the project root for full license information.
+
+namespace MarcusMedina.Fluent.Text.Extensions.Counting;
 
 /// <summary>
 /// Extension methods for counting and statistical operations on strings.

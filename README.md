@@ -2,11 +2,13 @@
 
 **Enterprise-grade** multi-platform string extension library with semantic namespaces.
 
-[![NuGet](https://img.shields.io/badge/nuget-v1.0.0-blue)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text)
-[![.NET 8.0](https://img.shields.io/badge/.NET-8.0-blue)]()
-[![Build](https://img.shields.io/badge/build-passing-brightgreen)]()
-[![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)]()
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+<!-- 🧱 Marcus Medina NuGet & Demo Badges -->
+
+[![NuGet Version](https://img.shields.io/nuget/v/MarcusMedina.Fluent.Text.svg?label=NuGet%20Version&color=blue)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/MarcusMedina.Fluent.Text.svg?label=Downloads&color=brightgreen)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text)
+[![.NET Target](https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet)](https://dotnet.microsoft.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Run on .NET Fiddle](https://img.shields.io/badge/Run%20on-.NET%20Fiddle-blue?logo=dotnet)](https://dotnetfiddle.net/q4OKSF)
 
 ---
 

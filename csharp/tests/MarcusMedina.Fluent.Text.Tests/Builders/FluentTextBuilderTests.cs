@@ -1,4 +1,7 @@
-﻿namespace MarcusMedina.Fluent.Text.Tests.Builders;
+﻿// MIT License - Copyright (c) 2025 Marcus Ackre Medina
+// See LICENSE file in the project root for full license information.
+
+namespace MarcusMedina.Fluent.Text.Tests.Builders;
 #pragma warning disable IDE0058 // Expression value is never used
 
 using FluentAssertions;
