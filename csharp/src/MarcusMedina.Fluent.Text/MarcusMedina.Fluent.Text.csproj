@@ -10,7 +10,7 @@
     <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
     <NoWarn>CS1570;CS1591;</NoWarn>
 
-    
+
     <PackageId>MarcusMedina.Fluent.Text</PackageId>
     <Version>1.1.0</Version>
     <Authors>Marcus Ackre Medina</Authors>
@@ -20,6 +20,8 @@
     <PackageTags>fluent;builder;text;strings;extension;marcusmedina</PackageTags>
     <PackageProjectUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text</RepositoryUrl>
+<RepositoryType>git</RepositoryType>
+
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
@@ -42,6 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    
+
   </ItemGroup>
 </Project>

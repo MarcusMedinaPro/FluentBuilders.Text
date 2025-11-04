@@ -164,3 +164,6 @@ If you find this library useful:
 ---
 
 **Built with ❤️ using Test-Driven Development and Vertical Slice Architecture**
+
+---
+_For metadata and SEO keywords, see [SEO.md](SEO.md)._
