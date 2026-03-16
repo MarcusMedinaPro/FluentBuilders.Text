@@ -115,10 +115,8 @@ jobs:
       - name: Sign packages
         run: |
           for package in ./unsigned/*.nupkg; do
-            dotnet nuget sign "$package" \
-              --certificate-path cert.pfx \
-              --certificate-password "${{ secrets.NUGET_SIGNING_CERT_PASSWORD }}" \
-              --timestamper http://timestamp.digicert.com
+            signtool sign /n "Open Source Developer, Marcus Ackre Medina" `
+              /fd sha256 /tr http://time.certum.pl /td sha256 "$package"
           done
 
       - name: Verify signatures
