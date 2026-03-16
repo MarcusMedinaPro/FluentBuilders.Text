@@ -1,4 +1,4 @@
-name: 🚀 Release - Full Pipeline
+name: Release - Full Pipeline
 
 on:
   push:
@@ -14,7 +14,7 @@ permissions:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    name: 1️⃣ Build & Test
+    name: 1 Build & Test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,19 +22,19 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore csharp
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build csharp --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --configuration Release --no-build --verbosity normal --logger trx
+        run: dotnet test csharp --configuration Release --no-build --verbosity normal --logger trx
 
       - name: Pack
-        run: dotnet pack --configuration Release --no-build --output ./nupkgs
+        run: dotnet pack csharp/src/MarcusMedina.Fluent.Text.Core/MarcusMedina.Fluent.Text.Core.csproj --configuration Release --no-build --output ./nupkgs
 
       - name: Upload unsigned packages
         uses: actions/upload-artifact@v4
@@ -52,7 +52,7 @@ jobs:
   quality-gate:
     needs: build-and-test
     runs-on: ubuntu-latest
-    name: 2️⃣ Code Quality
+    name: 2 Code Quality
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,10 +60,10 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore csharp
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
@@ -72,7 +72,7 @@ jobs:
           queries: security-extended,security-and-quality
 
       - name: Build for CodeQL
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build csharp --configuration Release --no-restore
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
@@ -92,7 +92,7 @@ jobs:
   package-signing:
     needs: quality-gate
     runs-on: ubuntu-latest
-    name: 3️⃣ Package Signing
+    name: 3 Package Signing
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -100,7 +100,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Download unsigned packages
         uses: actions/download-artifact@v4
@@ -144,7 +144,7 @@ jobs:
   publish-nuget:
     needs: package-signing
     runs-on: ubuntu-latest
-    name: 4️⃣ Publish to NuGet.org
+    name: 4 Publish to NuGet.org
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Checkout
@@ -153,7 +153,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Download signed packages
         uses: actions/download-artifact@v4
