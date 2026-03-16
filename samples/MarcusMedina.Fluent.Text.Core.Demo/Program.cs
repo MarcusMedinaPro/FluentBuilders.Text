@@ -1,4 +1,3 @@
-using System.Text;
 using MarcusMedina.Fluent.Text.Core.Builders;
 using MarcusMedina.Fluent.Text.Core.Extensions.Casing;
 using MarcusMedina.Fluent.Text.Core.Extensions.Counting;
@@ -9,7 +8,7 @@ using MarcusMedina.Fluent.Text.Core.Extensions.Manipulation;
 using MarcusMedina.Fluent.Text.Core.Extensions.Pattern;
 using MarcusMedina.Fluent.Text.Core.Extensions.Validation;
 
-Console.OutputEncoding = Encoding.UTF8;
+Console.OutputEncoding = System.Text.Encoding.UTF8; // Enable emoji support
 
 Console.WriteLine("=== Fluent Text Core Demo ===\n");
 
