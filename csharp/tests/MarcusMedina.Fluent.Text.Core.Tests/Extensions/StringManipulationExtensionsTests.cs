@@ -1,7 +1,7 @@
 // MIT License - Copyright (c) 2025 Marcus Ackre Medina
 // See LICENSE file in the project root for full license information.
 
-﻿namespace MarcusMedina.Fluent.Text.Core.Tests.Extensions;
+namespace MarcusMedina.Fluent.Text.Core.Tests.Extensions;
 #pragma warning disable IDE0058 // Expression value is never used
 
 using MarcusMedina.Fluent.Text.Core.Extensions.Manipulation;
