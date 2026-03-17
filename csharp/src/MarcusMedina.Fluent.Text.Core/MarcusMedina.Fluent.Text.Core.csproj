@@ -11,15 +11,15 @@
     <NoWarn>CS1570;CS1591;</NoWarn>
 
 
-    <PackageId>MarcusMedina.Fluent.Text.Core</PackageId>
-    <Version>2.1.1</Version>
+    <PackageId>MarcusMedina.Fluent.Text</PackageId>
+    <Version>2.0.0</Version>
     <Authors>Marcus Ackre Medina</Authors>
     <Company>Marcus Ackre Medina</Company>
     <Product>FluentBuilders</Product>
     <Description>Fluent builder for Text manipulation (.NET 10+)</Description>
     <PackageTags>fluent;builder;text;strings;extension;marcusmedina;net10</PackageTags>
-    <PackageProjectUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text.Core</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text.Core</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text</RepositoryUrl>
 <RepositoryType>git</RepositoryType>
 
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

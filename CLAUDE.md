@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**MarcusMedina.Fluent.Text.Core** - A C# NuGet package providing fluent extensions and a builder API for string manipulation, casing, counting, extraction, validation, and more.
+**MarcusMedina.Fluent.Text** - A C# NuGet package providing fluent extensions and a builder API for string manipulation, casing, counting, extraction, validation, and more.
 
 - **Language:** C# 14.0
 - **Framework:** .NET 10.0+
@@ -106,14 +106,15 @@ Triggers on: `git push` with `v*` tags or to `main`/`release` branches
 ## NuGet Package Configuration
 
 Key settings in `.csproj`:
-- **Package ID:** `MarcusMedina.Fluent.Text.Core`
-- **Version:** 2.0.0 (breaking change: PackageId corrected from `MarcusMedina.Fluent.Text.Core.Core`)
+- **Package ID:** `MarcusMedina.Fluent.Text`
+- **Version:** 2.0.0 (breaking change: folder renamed from FluentBuilders.Text.Core to FluentBuilders.Text, PackageId changed from `MarcusMedina.Fluent.Text.Core` to `MarcusMedina.Fluent.Text`)
 - **License:** MIT
 - **Repository:** GitHub repository URL
 
 ## Breaking Changes (v2.0.0)
 
-- **PackageId renamed** from `MarcusMedina.Fluent.Text.Core.Core` to `MarcusMedina.Fluent.Text.Core`
+- **Folder renamed** from `FluentBuilders.Text.Core` to `FluentBuilders.Text`
+- **PackageId renamed** from `MarcusMedina.Fluent.Text.Core` to `MarcusMedina.Fluent.Text`
 - **Target framework** upgraded from .NET 8.0 to .NET 10.0
 
 ## Common Issues & Solutions
