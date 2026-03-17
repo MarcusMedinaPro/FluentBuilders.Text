@@ -5,6 +5,9 @@ on:
     tags: ["v*"]
     branches: [release, main]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
   security-events: write
@@ -69,31 +72,19 @@ jobs:
           name: unsigned-packages
           path: ./unsigned
 
-      - name: Add Windows SDK to PATH
-        shell: cmd
-        run: |
-          echo Adding Windows SDK signtool to PATH...
-          set "PATH=C:\Program Files (x86)\Windows Kits\10\bin\x64;%PATH%"
-          where signtool
-
       - name: Sign packages
         shell: cmd
         run: |
-          echo Current directory: %cd%
-          echo Files to sign:
-          dir ./unsigned
-          echo.
-          echo Looking for signtool...
-          where signtool
-          echo.
           echo Signing packages...
+          set SIGNTOOL=C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe
           for %%f in (./unsigned/*.nupkg) do (
             echo Signing: %%f
-            signtool sign /n "Open Source Developer, Marcus Ackre Medina" /fd sha256 /tr http://time.certum.pl /td sha256 "%%f"
+            "%SIGNTOOL%" sign /n "Open Source Developer, Marcus Ackre Medina" /fd sha256 /tr http://time.certum.pl /td sha256 "%%f"
             if errorlevel 1 (
               echo ERROR: Signing failed for %%f
               exit /b 1
             )
+            echo Signed OK: %%f
           )
 
       - name: Verify signatures
