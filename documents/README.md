@@ -6,7 +6,7 @@
 
 [![NuGet Version](https://img.shields.io/nuget/v/MarcusMedina.Fluent.Text.svg?label=NuGet%20Version&color=blue)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/MarcusMedina.Fluent.Text.svg?label=Downloads&color=brightgreen)](https://www.nuget.org/packages/MarcusMedina.Fluent.Text)
-[![.NET Target](https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet)](https://dotnet.microsoft.com/)
+[![.NET Target](https://img.shields.io/badge/.NET-10.0-blueviolet?logo=dotnet)](https://dotnet.microsoft.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Run on .NET Fiddle](https://img.shields.io/badge/Run%20on-.NET%20Fiddle-blue?logo=dotnet)](https://dotnetfiddle.net/q4OKSF)
 
