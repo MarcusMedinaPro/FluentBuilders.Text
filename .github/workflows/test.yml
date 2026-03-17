@@ -21,16 +21,16 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore csharp/MarcusMedina.Fluent.Text.Core.slnx
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build csharp/MarcusMedina.Fluent.Text.Core.slnx --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --configuration Release --no-build --verbosity normal --logger trx
+        run: dotnet test csharp/MarcusMedina.Fluent.Text.Core.slnx --configuration Release --no-build --verbosity normal --logger trx
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -50,7 +50,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore dependencies
         run: dotnet restore
@@ -62,7 +62,7 @@ jobs:
           queries: security-extended,security-and-quality
 
       - name: Build for CodeQL
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build csharp/MarcusMedina.Fluent.Text.Core.slnx --configuration Release --no-restore
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

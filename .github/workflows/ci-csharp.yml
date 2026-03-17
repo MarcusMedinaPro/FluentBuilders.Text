@@ -23,19 +23,16 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 10.0.x
 
     - name: Restore dependencies
-      working-directory: ./csharp
-      run: dotnet restore
+      run: dotnet restore csharp/MarcusMedina.Fluent.Text.Core.slnx
 
     - name: Build
-      working-directory: ./csharp
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build csharp/MarcusMedina.Fluent.Text.Core.slnx --no-restore --configuration Release
 
     - name: Test
-      working-directory: ./csharp
-      run: dotnet test --no-build --configuration Release --verbosity normal
+      run: dotnet test csharp/MarcusMedina.Fluent.Text.Core.slnx --no-build --configuration Release --verbosity normal
 
   publish:
     needs: build-and-test
@@ -51,11 +48,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 10.0.x
 
     - name: Pack
-      working-directory: ./csharp
-      run: dotnet pack --configuration Release
+      run: dotnet pack csharp/src/MarcusMedina.Fluent.Text.Core/MarcusMedina.Fluent.Text.Core.csproj --configuration Release
 
     - name: Push to NuGet (Trusted Publishing)
       working-directory: ./csharp
