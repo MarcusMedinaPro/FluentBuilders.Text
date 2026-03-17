@@ -108,10 +108,6 @@ jobs:
           name: unsigned-packages
           path: ./unsigned
 
-      - name: Decode signing certificate
-        run: |
-          echo "${{ secrets.NUGET_SIGNING_CERT }}" | base64 --decode > cert.pfx
-
       - name: Sign packages
         run: |
           for package in ./unsigned/*.nupkg; do
