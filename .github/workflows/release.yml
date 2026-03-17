@@ -90,7 +90,7 @@ jobs:
           echo Verifying signatures...
           for %%f in (./unsigned/*.nupkg) do (
             echo Verifying: %%f
-            dotnet nuget verify "%%f"
+            dotnet nuget verify "./unsigned/%%f"
             if errorlevel 1 (
               echo ERROR: Verification failed for %%f
               exit /b 1
