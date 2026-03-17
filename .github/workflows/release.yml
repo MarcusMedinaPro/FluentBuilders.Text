@@ -54,7 +54,7 @@ jobs:
 
 
   package-signing:
-    needs: build-and-test
+    needs: quality-gate
     runs-on: [self-hosted, Signer]
     name: 3 Package Signing
     steps:
