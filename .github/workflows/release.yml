@@ -88,16 +88,28 @@ jobs:
           )
 
       - name: Verify signatures
+        shell: cmd
         run: |
-          for package in ./unsigned/*.nupkg; do
-            dotnet nuget verify "$package"
-          done
+          echo Verifying signatures...
+          for %%f in (./unsigned/*.nupkg) do (
+            echo Verifying: %%f
+            dotnet nuget verify "%%f"
+            if errorlevel 1 (
+              echo ERROR: Verification failed for %%f
+              exit /b 1
+            )
+          )
 
       - name: Generate SHA256 checksums
+        shell: pwsh
         run: |
-          cd unsigned
-          sha256sum *.nupkg > SHA256SUMS.txt
-          cat SHA256SUMS.txt
+          cd ./unsigned
+          $files = Get-ChildItem *.nupkg
+          $files | ForEach-Object {
+            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
+            "$hash  $($_.Name)"
+          } | Out-File SHA256SUMS.txt
+          Get-Content SHA256SUMS.txt
 
       - name: Upload signed packages
         uses: actions/upload-artifact@v4
