@@ -28,16 +28,16 @@ jobs:
           dotnet-version: 10.0.x
 
       - name: Restore dependencies
-        run: cd csharp && dotnet restore
+        run: dotnet restore csharp/MarcusMedina.Fluent.Text.Core.sln
 
       - name: Build
-        run: cd csharp && dotnet build --configuration Release --no-restore
+        run: dotnet build csharp/MarcusMedina.Fluent.Text.Core.sln --configuration Release --no-restore
 
       - name: Test
-        run: cd csharp && dotnet test --configuration Release --no-build --verbosity normal --logger trx
+        run: dotnet test csharp/MarcusMedina.Fluent.Text.Core.sln --configuration Release --no-build --verbosity normal --logger trx
 
       - name: Pack
-        run: cd csharp && dotnet pack src/MarcusMedina.Fluent.Text.Core/MarcusMedina.Fluent.Text.Core.csproj --configuration Release --no-build --output ../nupkgs
+        run: dotnet pack csharp/src/MarcusMedina.Fluent.Text.Core/MarcusMedina.Fluent.Text.Core.csproj --configuration Release --no-build --output nupkgs
 
       - name: Upload unsigned packages
         uses: actions/upload-artifact@v4
