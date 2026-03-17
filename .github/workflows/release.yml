@@ -110,10 +110,26 @@ jobs:
 
       - name: Sign packages
         run: |
+          echo "Current directory: $(pwd)"
+          echo "Files to sign:"
+          dir ./unsigned
+          echo ""
+          echo "Looking for signtool..."
+          where signtool
+          echo ""
+          echo "Signing packages..."
           for package in ./unsigned/*.nupkg; do
+            echo "Signing: $package"
             signtool sign /n "Open Source Developer, Marcus Ackre Medina" `
               /fd sha256 /tr http://time.certum.pl /td sha256 "$package"
+            $exitCode = $?
+            echo "Exit code: $exitCode"
+            if ($exitCode -ne 0) {
+              echo "ERROR: Signing failed for $package"
+              exit 1
+            }
           done
+          echo "All packages signed successfully"
 
       - name: Verify signatures
         run: |
