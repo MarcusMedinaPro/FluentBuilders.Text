@@ -16,8 +16,8 @@
     <Authors>Marcus Ackre Medina</Authors>
     <Company>Marcus Ackre Medina</Company>
     <Product>FluentBuilders</Product>
-    <Description>Fluent builder for Text manipulation</Description>
-    <PackageTags>fluent;builder;text;strings;extension;marcusmedina</PackageTags>
+    <Description>Fluent builder for Text manipulation (.NET 10+)</Description>
+    <PackageTags>fluent;builder;text;strings;extension;marcusmedina;net10</PackageTags>
     <PackageProjectUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MarcusMedinaPro/FluentBuilders.Text.Core</RepositoryUrl>
 <RepositoryType>git</RepositoryType>
