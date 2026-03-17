@@ -69,6 +69,13 @@ jobs:
           name: unsigned-packages
           path: ./unsigned
 
+      - name: Add Windows SDK to PATH
+        shell: cmd
+        run: |
+          echo Adding Windows SDK signtool to PATH...
+          set "PATH=C:\Program Files (x86)\Windows Kits\10\bin\x64;%PATH%"
+          where signtool
+
       - name: Sign packages
         shell: cmd
         run: |
