@@ -77,7 +77,7 @@ jobs:
         run: |
           for %%f in (./unsigned/*.nupkg) do (
             echo Signing: %%f
-            dotnet nuget sign "%%f" ^
+            dotnet nuget sign "./unsigned/%%f" ^
               --certificate-store-name My ^
               --certificate-store-location CurrentUser ^
               --certificate-subject-name "Open Source Developer, Marcus Ackre Medina" ^
