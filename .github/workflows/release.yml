@@ -73,6 +73,7 @@ jobs:
           path: ./unsigned
 
       - name: Sign packages
+      shell: bash
         run: |
           for package in ./unsigned/*.nupkg; do
             echo "Signing: $package"
