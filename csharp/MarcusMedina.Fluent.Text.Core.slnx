@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MarcusMedina.Fluent.Text.Core/MarcusMedina.Fluent.Text.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MarcusMedina.Fluent.Text.Core.Tests/MarcusMedina.Fluent.Text.Core.Tests.csproj" />
+  </Folder>
+  <Project Path="../samples/MarcusMedina.Fluent.Text.Core.Demo/MarcusMedina.Fluent.Text.Core.Demo.csproj" />
+</Solution>

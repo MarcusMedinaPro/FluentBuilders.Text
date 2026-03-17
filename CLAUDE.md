@@ -63,7 +63,7 @@ git push origin v2.0.0
 ### File Structure
 ```
 csharp/
-├── MarcusMedina.Fluent.Text.Core.sln
+├── MarcusMedina.Fluent.Text.Core.slnx
 ├── src/MarcusMedina.Fluent.Text.Core/
 │   ├── Builders/              # Fluent builder implementation
 │   └── Extensions/            # Extension method categories
